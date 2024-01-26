@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Model, createServer} from 'miragejs';
-import {App} from './App';
+import { Model, createServer } from 'miragejs';
+import { App } from './App';
 
 createServer({
   models: {
@@ -37,9 +37,9 @@ createServer({
     })
 
     this.post('/transactions', (schema, request) => {
-      const data = JSON.parse(request.requestBody) //as it's a object, we need to parse it to JSON
-      return schema.create('transactions', data)
-    })
+      const data = JSON.parse(request.requestBody);
+      return schema.create('transaction', data); // Alterado para 'transaction'
+    });
   }
 })
 
